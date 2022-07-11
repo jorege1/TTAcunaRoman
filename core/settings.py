@@ -18,7 +18,8 @@ SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_1122')
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 # load production server from .env
-ALLOWED_HOSTS = ['25.83.195.64','localhost', '127.0.0.1', config('SERVER', default='127.0.0.1')] #25.83.195.64 IP DE HAMACHI PARA TRABAJAR REMOTO
+# ALLOWED_HOSTS = ['25.83.195.64','localhost', '127.0.0.1', config('SERVER', default='127.0.0.1')] #25.83.195.64 IP DE HAMACHI PARA TRABAJAR REMOTO
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', config('SERVER', default='127.0.0.1')]
 
 # Application definition
 
@@ -71,8 +72,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd9o6vpobuskdrp',
+        'USER': 'aysivsqpmttmru',
+        'PASSWORD': 'd8bf27f604f69a49f71266d19bc196d3d795377b855b32b7a489696a2f2d0768',
+        'HOST': 'ec2-54-86-224-85.compute-1.amazonaws.com',
+        'PORT':'5432'
     }
 }
 
